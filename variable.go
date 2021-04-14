@@ -78,6 +78,7 @@ func (s *variables) List(ctx context.Context, workspaceID string, options Variab
 	}
 
 	u := fmt.Sprintf("workspaces/%s/vars", url.QueryEscape(workspaceID))
+	fmt.Println(u)
 	req, err := s.client.newRequest("GET", u, &options)
 	if err != nil {
 		return nil, err
